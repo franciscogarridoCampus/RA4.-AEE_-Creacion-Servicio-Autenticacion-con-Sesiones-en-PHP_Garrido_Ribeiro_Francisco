@@ -1,4 +1,4 @@
-<!--
+
 <?php
 $usuario=["Francisco" => "1234"];
 
@@ -10,28 +10,14 @@ $_SESSION ['usuario']=$_POST['nombre'];
 
 if (isset($_GET['logout'])) {
 session_destroy();
-header("Location: hola.php"); 
+header("Location: bienvenida.php"); 
 exit();
 }
 //USAR HEADER PARA REDIRIGIRSE A OTRO APARTADO DEL ARCHIVO PeRO ANTES HACER EL LOGIN BIEN
 ?>
--->
+
 <!--Justo este php es de prueba hasta que averigue como hacer que si es correcto usuario y contraseña me lleve a un apartado dentro de este php con el ehader redirect-->
-<?php
-$usuario = ["Francisco" => "1234"];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['nombre'] ?? '';
-    $clave = $_POST['clave'] ?? '';
-
-    if (isset($usuario[$nombre]) && $usuario[$nombre] === $clave) {
-        // Enviamos una respuesta de éxito al navegador
-        echo "<script>console.log('✅ Correcto');</script>";
-    } else {
-        echo "<script>console.log('❌ Usuario o contraseña incorrectos');</script>";
-    }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="es">
